@@ -2,5 +2,11 @@
   "orgName": "Campaign Influence Starter Pack Scratch Org",
   "edition": "Developer",
   "hasSampleData": true,
-  "features": []
+  "features": ["PardotScFeaturesCampaignInfluence"],
+  "settings": {
+    "campaignSettings": {
+      "enableCampaignInfluence2":true,
+      "enableB2bmaCampaignInfluence2":true
+    }
+  }
 }

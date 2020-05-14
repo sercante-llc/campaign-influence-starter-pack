@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-echo "Installing Sercante Core Objects package: 'Pardot Package@4.66.0.1'"
-sfdx force:package:install --package 04t1W000000kpAoQAI -w 20
+echo "Installing Pardot package: 'Pardot Package@4.68.0.1'"
+sfdx force:package:install --package 04t1W000000kpBDQAY -w 20
 #echo "Installing Sercante Core Objects package: 'Pardot Internal Integration@1.6.0.1'"
 #sfdx force:package:install --package 04tf4000001VsyYAAS -w 20
 

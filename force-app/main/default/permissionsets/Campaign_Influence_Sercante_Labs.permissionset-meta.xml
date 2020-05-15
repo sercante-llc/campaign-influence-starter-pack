@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants the CampaignInfluence2 permission to Users. Needs Sales User license. Provided with the Campaign Influence Starter Pack</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Campaign Influence - Sercante Labs</label>
+    <license>SalesUserPsl</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CampaignInfluence2</name>
+    </userPermissions>
+</PermissionSet>

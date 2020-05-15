@@ -1,12 +1,16 @@
 {
   "orgName": "Campaign Influence Starter Pack Scratch Org",
-  "edition": "Developer",
+  "edition": "Enterprise",
   "hasSampleData": true,
-  "features": ["PardotScFeaturesCampaignInfluence"],
+  "features": ["SalesUser", "ServiceCloud", "MarketingUser", "PardotScFeaturesCampaignInfluence"],
   "settings": {
     "campaignSettings": {
-      "enableCampaignInfluence2":true,
-      "enableB2bmaCampaignInfluence2":true
+      "enableCampaignInfluence2": true,
+      "enableAutoCampInfluenceDisabled": true,
+      "enableB2bmaCampaignInfluence2": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled":true
     }
   }
 }

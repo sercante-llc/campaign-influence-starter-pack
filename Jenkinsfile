@@ -117,35 +117,35 @@ pipeline {
             }
         }
 
-        stage('Run Apex Tests') {
-            when {
-                expression { !params.CREATEPACKAGE && !params.PROMOTEPACKAGE }
-            }
-            steps {
-                container('sfdx') {
-                    script {
-                        sh "mkdir -p ${RUN_ARTIFACT_DIR}"
-                        def testCoveragePercent=''
-                        timeout(time: 510, unit: 'SECONDS') {
-                            // this one gives us a nice junit thing that Jenkins can slurp up
-                            //sh "sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat tap --targetusername ${SCRATCH_ORG_USERNAME}"
+        // stage('Run Apex Tests') {
+        //     when {
+        //         expression { !params.CREATEPACKAGE && !params.PROMOTEPACKAGE }
+        //     }
+        //     steps {
+        //         container('sfdx') {
+        //             script {
+        //                 sh "mkdir -p ${RUN_ARTIFACT_DIR}"
+        //                 def testCoveragePercent=''
+        //                 timeout(time: 510, unit: 'SECONDS') {
+        //                     // this one gives us a nice junit thing that Jenkins can slurp up
+        //                     //sh "sfdx force:apex:test:run --testlevel RunLocalTests --outputdir ${RUN_ARTIFACT_DIR} --resultformat tap --targetusername ${SCRATCH_ORG_USERNAME}"
 
-                            jsonString = sh returnStdout: true, script: "sfdx force:apex:test:run --codecoverage --resultformat json --json --wait 5 --targetusername ${SCRATCH_ORG_USERNAME}"
-                            robj = jsonObjectFromString(jsonString)
-                            testCoveragePercent=robj.result.summary.orgWideCoverage[0..-2].toInteger()
+        //                     jsonString = sh returnStdout: true, script: "sfdx force:apex:test:run --codecoverage --resultformat json --json --wait 5 --targetusername ${SCRATCH_ORG_USERNAME}"
+        //                     robj = jsonObjectFromString(jsonString)
+        //                     testCoveragePercent=robj.result.summary.orgWideCoverage[0..-2].toInteger()
                             
-                            echo "Org wide test coverage was ${testCoveragePercent}"
-                            if(testCoveragePercent < 75) {
-                                error("Test coverage should be at least 75%. It was ${testCoveragePercent}")
-                            }
-                            robj = null
-                        }
-                        //get the results
-                        //junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
-                    }
-                }
-            }
-        }
+        //                     echo "Org wide test coverage was ${testCoveragePercent}"
+        //                     if(testCoveragePercent < 75) {
+        //                         error("Test coverage should be at least 75%. It was ${testCoveragePercent}")
+        //                     }
+        //                     robj = null
+        //                 }
+        //                 //get the results
+        //                 //junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('Create Package and Install') {
             when {

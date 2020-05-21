@@ -96,8 +96,8 @@ pipeline {
                         sh "sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "we need to NOT push dashboards and reports in this first push"
-                        sh "mv force-app/main/default/dashboards force-app/main/dashboards"
-                        sh "mv force-app/main/default/reports force-app/main/reports"
+                        sh "mv force-app/main/default/dashboards ./dashboards"
+                        sh "mv force-app/main/default/reports ./reports"
 
                         echo "Doing initial push of source"
                         sh "sfdx force:source:push --targetusername ${SCRATCH_ORG_USERNAME}"
@@ -106,8 +106,8 @@ pipeline {
                         sh "sfdx force:user:permset:assign --permsetname Campaign_Influence_Sercante_Labs --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "Pushing reports and dashboards"
-                        sh "mv force-app/main/dashboards force-app/main/default/dashboards"
-                        sh "mv force-app/main/reports force-app/main/default/reports"
+                        sh "mv ./dashboards force-app/main/default/dashboards"
+                        sh "mv ./reports force-app/main/default/reports"
                         sh "sfdx force:source:push --targetusername ${SCRATCH_ORG_USERNAME}"
                         
                         echo "Generating new password for the scratch org user"

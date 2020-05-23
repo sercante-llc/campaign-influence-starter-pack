@@ -1,7 +1,6 @@
 {
   "orgName": "Campaign Influence Starter Pack Scratch Org",
   "edition": "Enterprise",
-  "hasSampleData": true,
   "features": ["SalesUser", "ServiceCloud", "MarketingUser", "PardotScFeaturesCampaignInfluence"],
   "settings": {
     "campaignSettings": {

@@ -14,6 +14,7 @@ sfdx force:source:push
 
 echo "Assigning permission set"
 sfdx force:user:permset:assign --permsetname "Campaign_Influence_Sercante_Labs"
+sfdx force:user:permset:assign --permsetname "Campaign_Influence_Demo_Data"
 
 echo "Pushing reports and dashboards"
 git checkout force-app/main/default/dashboards
@@ -24,6 +25,6 @@ sfdx force:source:push
 # cd sfdx-data
 # sh importData.sh
 # cd ..
-echo "Generating new password for the scratch org user"
-sfdx force:user:password:generate
+#echo "Generating new password for the scratch org user"
+#sfdx force:user:password:generate
 echo "You should be ready to go! In VSCode, bring up the command pallette and Refresh SObject Definitions"

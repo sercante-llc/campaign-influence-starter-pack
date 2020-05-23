@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampaignInfluenceModel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isDefaultModel>false</isDefaultModel>
+    <isModelLocked>true</isModelLocked>
+    <modelDescription>Last campaign engaged with gets 100% of the revenue share</modelDescription>
+    <name>Last Touch Model</name>
+    <recordPreference>RecordsWithAttribution</recordPreference>
+</CampaignInfluenceModel>

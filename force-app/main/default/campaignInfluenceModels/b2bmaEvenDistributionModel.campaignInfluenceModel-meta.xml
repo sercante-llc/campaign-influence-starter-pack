@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampaignInfluenceModel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isDefaultModel>false</isDefaultModel>
+    <isModelLocked>true</isModelLocked>
+    <modelDescription>All campaigns engaged with receive an equal distribution of the revenue share</modelDescription>
+    <name>Even Distribution Model</name>
+    <recordPreference>RecordsWithAttribution</recordPreference>
+</CampaignInfluenceModel>

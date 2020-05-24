@@ -126,15 +126,7 @@ pipeline {
             steps {
                 container('sfdx') {
                     script {
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f sfdx-data/Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f sfdx-data/Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
+                        setupTestData()
                     }
                 }
             }
@@ -234,15 +226,7 @@ pipeline {
                         }
 
                         //ok package is installed, lets install data
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f sfdx-data/Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f sfdx-data/Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
+                        setupTestData()
                     }
                 }
                 script {
@@ -345,4 +329,16 @@ pipeline {
     post { always { script {
         slackNotification()
     } } }
+}
+
+void setupTestData() {
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f sfdx-data/Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f sfdx-data/Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunitys.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+    sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
 }

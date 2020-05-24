@@ -126,16 +126,14 @@ pipeline {
             steps {
                 container('sfdx') {
                     script {
-                        sh "cd sfdx-data"
-
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f ./Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f ./Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f ./Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f ./CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f ./Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f ./CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f sfdx-data/Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f sfdx-data/Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
                         sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f ./OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
                         sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
                     }
                 }
@@ -196,7 +194,20 @@ pipeline {
                         def pkgVersionId = SFDX_PROJECT_JSON.packageAliases[lastVersionAlias]
                         echo pkgVersionId
 
-                        //it takes a while for packages to be available
+                        //restore our project directories
+                        sh "mv ./objects force-app/main/default/objects"
+                        sh "mv ./Campaign_Influence_Demo_Data.permissionset-meta.xml force-app/main/default/permissionsets/Campaign_Influence_Demo_Data.permissionset-meta.xml"
+                        sh "mv ./settings force-app/main/default/settings"
+
+                        //it takes a while for packages to be available, so lets do other stuff to get our scratch org ready to test
+                        echo "Installing Pardot package (pi): 'Pardot Package@4.68.0.1'"
+                        sh "sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
+
+                        echo "pushing bare minimum configuration hopefully"
+                        sh "sfdx force:source:deploy -m Settings:Security --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:source:deploy -m PermissionSets:Campaign_Influence_Sercante_Labs --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:user:permset:assign --permsetname Campaign_Influence_Sercante_Labs --targetusername ${SCRATCH_ORG_USERNAME}"
+
                         //currently publishwait option doesn't work, need to manually poll. https://github.com/forcedotcom/cli/issues/160
                         timeout(60) {
                             waitUntil {
@@ -221,6 +232,17 @@ pipeline {
                                 }
                             }
                         }
+
+                        //ok package is installed, lets install data
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f sfdx-data/Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f sfdx-data/Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
                     }
                 }
                 script {
@@ -291,8 +313,9 @@ pipeline {
 
                             def line1 = "${messageHeader} ready to test: "
                             def line2 = "- <${magicUrl}|Auto Login> to this *temporary org* which is available for ${SCRATCH_ORG_DURATION_DAYS} days to validate"
-                            def line3 = "If testing looks good, <${JOB_URL}build?delay=0sec|Start a Package Create build>"
-                            slackSend (channel: "product-development", color: 'good', message: "${line1}\n${line2}\n${line3}")
+                            def line3 = "You will need to update the Campaign Model Settings to enable Last Touch and Multi Touch models!"
+                            def line4 = "If testing looks good, <${JOB_URL}build?delay=0sec|Start a Package Create build>"
+                            slackSend (channel: "product-development", color: 'good', message: "${line1}\n${line2}\n${line3}\n${line4}")
                         }
                         if(params.CREATEPACKAGE) {
                             def lastVersionAlias = sfdxGetLatestPackageVersion(SFDX_PROJECT_JSON.packageDirectories[0].versionName,SFDX_PROJECT_JSON)
@@ -307,8 +330,9 @@ pipeline {
                             def line1 = "${messageHeader} PackageVersion Created: "
                             def line2 = "- <${pkgMagicUrl}|Auto Login> to this *temporary org* with the Package Version installed already, which is available for ${SCRATCH_ORG_DURATION_DAYS} days to validate"
                             def line3 = "- Direct Package Install URLs: <https://test.salesforce.com/packaging/installPackage.apexp?p0=${pkgVersionId}|Test Org> or <https://login.salesforce.com/packaging/installPackage.apexp?p0=${pkgVersionId}|Production Org> (these bypass payments so Avoid using?)"
-                            def line4 = "If the package looks good, <${JOB_URL}build?delay=0sec|promote it>."
-                            slackSend (channel: "product-development", color: 'good', message: "${line1}\n${line2}\n${line3}\n${line4}")
+                            def line4 = "You will need to update the Campaign Model Settings to enable Last Touch and Multi Touch models!"
+                            def line5 = "If the package looks good, <${JOB_URL}build?delay=0sec|promote it>."
+                            slackSend (channel: "product-development", color: 'good', message: "${line1}\n${line2}\n${line3}\n${line4}\n${line5}")
                         }
                         if(params.PROMOTEPACKAGE) {
                             slackSend (channel: "product-development", color: 'good', message: "${messageHeader} PackageVersion Promoted. It might take up to an hour for the version to be reflected in Salesforce")

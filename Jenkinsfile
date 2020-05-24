@@ -96,7 +96,7 @@ pipeline {
                         sh "sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "we need to NOT push dashboards and reports in this first push"
-                        sh "sfdx force:source:deploy -m Settings:Security"
+                        sh "sfdx force:source:deploy -m Settings:Security --targetusername ${SCRATCH_ORG_USERNAME}"
                         sh "mv force-app/main/default/dashboards ./dashboards"
                         sh "mv force-app/main/default/reports ./reports"
 
@@ -128,15 +128,15 @@ pipeline {
                     script {
                         sh "cd sfdx-data"
 
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f ./Accounts.csv"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f ./Contacts.csv"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f ./Campaigns.csv"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f ./CampaignMembers.csv"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f ./Opportunity.csv"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f ./CampaignInfluences.csv"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL"
-                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f ./OpportunityContactRoles.csv"
-                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f ./Accounts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f ./Contacts.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f ./Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f ./CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f ./Opportunity.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f ./CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f ./OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
                     }
                 }
             }
@@ -179,6 +179,11 @@ pipeline {
             steps {
                 container('sfdx') {
                     script {
+                        //we need to move a BUNCH of the demo stuff out of the way first
+                        sh "mv force-app/main/default/objects ./objects"
+                        sh "mv force-app/main/default/permissionsets/Campaign_Influence_Demo_Data.permissionset-meta.xml ./Campaign_Influence_Demo_Data.permissionset-meta.xml"
+                        sh "mv force-app/main/default/settings ./settings"
+
                         //create the package version
                         jsonString = sh returnStdout: true, script: "sfdx force:package:version:create --package \"${SFDX_PROJECT_JSON.packageDirectories[0].package}\" --wait 30 --codecoverage --installationkeybypass --json"
                         echo jsonString

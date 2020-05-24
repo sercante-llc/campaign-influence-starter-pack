@@ -96,6 +96,7 @@ pipeline {
                         sh "sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "we need to NOT push dashboards and reports in this first push"
+                        sh "sfdx force:source:deploy -m Settings:Security"
                         sh "mv force-app/main/default/dashboards ./dashboards"
                         sh "mv force-app/main/default/reports ./reports"
 
@@ -104,6 +105,7 @@ pipeline {
 
                         echo "Assigning permission set"
                         sh "sfdx force:user:permset:assign --permsetname Campaign_Influence_Sercante_Labs --targetusername ${SCRATCH_ORG_USERNAME}"
+                        sh "sfdx force:user:permset:assign --permsetname Campaign_Influence_Demo_Data --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "Pushing reports and dashboards"
                         sh "mv ./dashboards force-app/main/default/dashboards"
@@ -112,6 +114,29 @@ pipeline {
                         
                         echo "Generating new password for the scratch org user"
                         sh "sfdx force:user:password:generate --targetusername ${SCRATCH_ORG_USERNAME}"
+                    }
+                }
+            }
+        }
+        
+        stage('Setup demo data') {
+            when {
+                expression { !params.CREATEPACKAGE && !params.PROMOTEPACKAGE }
+            }
+            steps {
+                container('sfdx') {
+                    script {
+                        sh "cd sfdx-data"
+
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Account -f ./Accounts.csv"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Contact -f ./Contacts.csv"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f ./Campaigns.csv"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f ./CampaignMembers.csv"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f ./Opportunity.csv"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f ./CampaignInfluences.csv"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL"
+                        sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f ./OpportunityContactRoles.csv"
+                        sh "sfdx force:apex:execute -f MoveCloneDataToOcr.apex --loglevel=FATAL"
                     }
                 }
             }

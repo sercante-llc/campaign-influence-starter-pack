@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampaignSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableAutoCampInfluenceDisabled>true</enableAutoCampInfluenceDisabled>
+    <enableB2bmaCampaignInfluence2>true</enableB2bmaCampaignInfluence2>
+    <enableCampaignHistoryTrackEnabled>false</enableCampaignHistoryTrackEnabled>
+    <enableCampaignInfluence2>true</enableCampaignInfluence2>
+    <enableCampaignMemberTWCF>true</enableCampaignMemberTWCF>
+    <enableSuppressNoValueCI2>false</enableSuppressNoValueCI2>
+</CampaignSettings>

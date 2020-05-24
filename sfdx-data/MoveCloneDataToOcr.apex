@@ -1,4 +1,4 @@
-List<OpportunityContactRoleClone__c> clones = [SELECT Contact__c, Opportunity__c, Primary__c, Role__c FROM OpportunityContactRoleClone__c];
+List<OpportunityContactRoleClone__c> clones = [SELECT Contact__c, Opportunity__c, IsPrimary__c, Role__c FROM OpportunityContactRoleClone__c];
 List<OpportunityContactRole> ocrs = new List<OpportunityContactRole>();
 
 for(OpportunityContactRoleClone__c c : clones) {
@@ -6,9 +6,10 @@ for(OpportunityContactRoleClone__c c : clones) {
         new OpportunityContactRole(
             ContactId = c.Contact__c,
             OpportunityId = c.Opportunity__c,
-            IsPrimary = c.Primary__c,
+            IsPrimary = c.IsPrimary__c,
             Role = c.Role__c
         )
     );
 }
 insert ocrs;
+delete clones;

@@ -338,8 +338,6 @@ void setupTestData() {
     sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Campaign -f sfdx-data/Campaigns.csv --targetusername ${SCRATCH_ORG_USERNAME}"
     sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f sfdx-data/CampaignMembers.csv --targetusername ${SCRATCH_ORG_USERNAME}"
     sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f sfdx-data/Opportunitys.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-    sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f sfdx-data/CampaignInfluences.csv --targetusername ${SCRATCH_ORG_USERNAME}"
-    sh "sfdx force:apex:execute -f sfdx-data/MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
     sh "sfdx force:data:bulk:upsert -i extId__c -w 2 -s OpportunityContactRoleClone__c -f sfdx-data/OpportunityContactRoles.csv --targetusername ${SCRATCH_ORG_USERNAME}"
     sh "sfdx force:apex:execute -f sfdx-data/MoveCloneDataToOcr.apex --loglevel=FATAL --targetusername ${SCRATCH_ORG_USERNAME}"
 }

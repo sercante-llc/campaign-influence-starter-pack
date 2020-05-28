@@ -3,11 +3,6 @@
   "edition": "Enterprise",
   "features": ["SalesUser", "ServiceCloud", "MarketingUser", "PardotScFeaturesCampaignInfluence"],
   "settings": {
-    "campaignSettings": {
-      "enableCampaignInfluence2": true,
-      "enableAutoCampInfluenceDisabled": true,
-      "enableB2bmaCampaignInfluence2": true
-    },
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled":true
     }

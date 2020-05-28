@@ -19,9 +19,7 @@ function getData {
 getData Account "SELECT extId__c, Name, CreatedDate FROM Account" true
 getData Contact "SELECT extId__c, FirstName, LastName, Account.extId__c, CreatedDate FROM Contact" true
 getData Campaign "SELECT extId__c, IsActive, ActualCost, BudgetedCost, Name, Description, EndDate, Parent.extId__c, StartDate, Status, Type FROM Campaign" true
-getData CampaignMember "SELECT extId__c, Campaign.extId__c, Contact.extId__c, Status, CreatedDate FROM CampaignMember" true
+getData CampaignMember "SELECT extId__c, Campaign.extId__c, Contact.extId__c, Status, CreatedDate, LastModifiedDate FROM CampaignMember" true
 getData Opportunity "SELECT extId__c, Name, Amount, CloseDate, Description, LeadSource, Probability, StageName, Type, Account.extId__c, Campaign.extId__c, CreatedDate FROM Opportunity" true
 getData OpportunityContactRole "SELECT Id, Opportunity.extId__c, Contact.extId__c, Role, IsPrimary, CreatedDate FROM OpportunityContactRole" false
 sed -i "1s/.*/extId__c,Opportunity__r.extId__c,Contact__r.extId__c,Role__c,IsPrimary__c,CreatedDate/" OpportunityContactRoles.csv
-getData CampaignInfluence "SELECT extId__c, Campaign.extId__c, Contact.extId__c, Influence, Opportunity.extId__c, CreatedDate FROM CampaignInfluence WHERE Model.DeveloperName = 'primaryModel'" true
-sed -i "1s/.*/extId__c,Campaign__r.extId__c,Contact__r.extId__c,Influence__c,Opportunity__r.extId__c,CreatedDate/" CampaignInfluences.csv

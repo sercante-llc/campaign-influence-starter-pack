@@ -18,12 +18,6 @@ sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignMember -f ./CampaignMemb
 echo "Importing Opportunity Records"
 sfdx force:data:bulk:upsert -i extId__c -w 2 -s Opportunity -f ./Opportunitys.csv
 
-echo "Importing CampaignInfluence Records"
-#this one is weird, we have to import to a custom object, then use APEX to create the CampaignInfluence records.
-#sign all because bulk:upsert can't get a good handle on Model.DeveloperName
-sfdx force:data:bulk:upsert -i extId__c -w 2 -s CampaignInfluenceClone__c -f ./CampaignInfluences.csv
-sfdx force:apex:execute -f MoveCloneDataToCampaignInfluence.apex --loglevel=FATAL
-
 echo "Importing OpportunityContactRole Records"
 #this one is weird, we have to import to a custom object, then use APEX to create the OCR records. 
 #sigh all because OCRs can't have an External Record ID

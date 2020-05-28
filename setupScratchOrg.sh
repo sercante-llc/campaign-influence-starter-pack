@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-sfdx force:apex:execute -f EnsureUserHasMarketing.apex --loglevel=FATAL
+sfdx force:apex:execute -f sfdx-data/EnsureUserHasMarketing.apex --loglevel=FATAL
 
 echo "Installing Pardot package (pi): 'Pardot Package@4.68.0.1'"
 sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt

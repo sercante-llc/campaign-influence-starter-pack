@@ -178,7 +178,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Opps Created from Event Campaigns (FT)</header>
+                <header>Opps Created from Conferences (FT)</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Opps_Created_from_Event_Campaigns_FT_VYt</report>
                 <showPercentage>false</showPercentage>
@@ -216,7 +216,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Opps Created from Webinar Campaigns (FT)</header>
+                <header>Opps Created from Ad Campaigns (FT)</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Opps_Created_from_Webinar_Campaigns_FT_VWz</report>
                 <showPercentage>false</showPercentage>
@@ -233,7 +233,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>test-02vsuiue1fii@example.com</runningUser>
+    <runningUser>test-ieqh7jhne2hi@example.com</runningUser>
     <textColor>#000000</textColor>
     <title>Campaign Influence</title>
     <titleColor>#000000</titleColor>

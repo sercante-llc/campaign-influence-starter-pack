@@ -67,8 +67,8 @@
             <column>CAMPAIGN.TYPE</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
-            <operator>contains</operator>
-            <value>Event</value>
+            <operator>equals</operator>
+            <value>Seminar / Conference</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -77,7 +77,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created from Event Campaigns (FT)</name>
+    <name>Opps Created from Seminar/Conference(FT)</name>
     <params>
         <name>scopeid</name>
         <value/>

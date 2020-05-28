@@ -67,8 +67,8 @@
             <column>CAMPAIGN.TYPE</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
-            <operator>contains</operator>
-            <value>Webinar</value>
+            <operator>equals</operator>
+            <value>Advertisement</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -77,7 +77,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created from Webinar Campaigns (FT)</name>
+    <name>Opps Created from Ad Campaigns (FT)</name>
     <params>
         <name>scopeid</name>
         <value/>

@@ -4,11 +4,9 @@ sfdx force:apex:execute -f sfdx-data/EnsureUserHasMarketing.apex --loglevel=FATA
 
 echo "Installing Pardot package (pi): 'Pardot Package@4.68.0.1'"
 sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt
-#echo "Installing Pardot Integration package (b2bma): 'Pardot Internal Integration@1.6.0.1'"
-#sfdx force:package:install --package 04tf4000001VsyYAAS -w 20
 
 echo "Doing initial push of source"
-#we need to NOT push dashboards and reports in this first push
+#we can NOT push dashboards and reports in this first push
 sfdx force:source:deploy -m Settings:Security #this needs to be done before the permission set is pushed
 rm -rf force-app/main/default/dashboards
 rm -rf force-app/main/default/reports
@@ -29,4 +27,4 @@ sh importData.sh
 cd ..
 #echo "Generating new password for the scratch org user"
 #sfdx force:user:password:generate
-echo "You should be ready to go! In VSCode, bring up the command pallette and Refresh SObject Definitions"
+echo "You should be ready to go!"

@@ -9,16 +9,15 @@
             <axisBinding>y</axisBinding>
             <column>REVENUE_SHARE</column>
         </chartSummaries>
-        <chartType>Donut</chartType>
+        <chartType>HorizontalBar</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>CAMPAIGN.NAME</groupingColumn>
-        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
-        <showAxisLabels>false</showAxisLabels>
+        <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
-        <showTotal>true</showTotal>
-        <showValues>true</showValues>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
         <textColor>#000000</textColor>
@@ -30,7 +29,13 @@
         <field>CAMPAIGN.TYPE</field>
     </columns>
     <columns>
-        <field>ACCOUNT.NAME</field>
+        <field>CM.RESPONDED</field>
+    </columns>
+    <columns>
+        <field>PRIMARY</field>
+    </columns>
+    <columns>
+        <field>CONTACT.FULL_NAME</field>
     </columns>
     <columns>
         <field>OPP.NAME</field>
@@ -42,7 +47,13 @@
         <field>OPP.STAGE_NAME</field>
     </columns>
     <columns>
-        <field>CONTACT.FULL_NAME</field>
+        <field>OPP.CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>MODEL.NAME</field>
     </columns>
     <columns>
         <field>INFLUENCE</field>
@@ -51,24 +62,13 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>REVENUE_SHARE</field>
     </columns>
-    <columns>
-        <field>MODEL.NAME</field>
-    </columns>
-    <description>Opps Created from Event Campaigns (First Touch)</description>
     <filter>
         <criteriaItems>
-            <column>MODEL.NAME</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>contains</operator>
-            <value>First Touch</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>CAMPAIGN.TYPE</column>
+            <column>OPP.CREATED_DATE</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Seminar / Conference</value>
+            <value>THIS_YEAR</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -77,7 +77,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created from Seminar/Conference(FT)</name>
+    <name>All Influential Campaigns</name>
     <params>
         <name>scopeid</name>
         <value/>

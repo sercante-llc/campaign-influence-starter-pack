@@ -54,14 +54,13 @@
     <columns>
         <field>MODEL.NAME</field>
     </columns>
-    <description>Opps Created from Webinar Campaigns (First Touch)</description>
     <filter>
         <criteriaItems>
             <column>MODEL.NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>contains</operator>
-            <value>First Touch</value>
+            <value>Even</value>
         </criteriaItems>
         <criteriaItems>
             <column>CAMPAIGN.TYPE</column>
@@ -77,7 +76,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created from Ad Campaigns (FT)</name>
+    <name>Opps Created from Ad Campaigns (Even)</name>
     <params>
         <name>scopeid</name>
         <value/>

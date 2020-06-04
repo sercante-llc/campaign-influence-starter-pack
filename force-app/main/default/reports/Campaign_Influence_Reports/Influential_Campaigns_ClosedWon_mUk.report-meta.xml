@@ -70,6 +70,13 @@
             <operator>equals</operator>
             <value>Closed Won</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>MODEL.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Even</value>
+        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>

@@ -20,7 +20,7 @@
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <groupingSortProperties/>
-                <header>Total Created Opportunities</header>
+                <header>Total Influenced Opportunities</header>
                 <indicatorBreakpoint1>0.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>12.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
@@ -46,7 +46,7 @@
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <groupingSortProperties/>
-                <header>Total Created Pipeline</header>
+                <header>Total Influenced Pipeline</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
@@ -72,7 +72,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Revenue - First Touch Model</header>
+                <header>All Influenced Pipeline - First Touch Model</header>
                 <report>Campaign_Influence_Reports/Created_First_Touch_P7j</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -97,7 +97,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Revenue - Last Touch Model</header>
+                <header>All Influenced Pipeline - Last Touch Model</header>
                 <report>Campaign_Influence_Reports/Created_Last_Touch_uzV</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -122,7 +122,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Revenue - Even Distribution Model</header>
+                <header>All Influenced Pipeline - Even Distribution Model</header>
                 <report>Campaign_Influence_Reports/Created_Even_Distribution_jFo</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -160,7 +160,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Influenced Revenue from Conferences</header>
+                <header>Influenced Pipeline from Conferences</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Opps_Created_from_Conferences_Even_Z91</report>
                 <showPercentage>false</showPercentage>
@@ -199,7 +199,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Influenced Revenue from Ad Campaigns</header>
+                <header>Influenced Pipeline from Ad Campaigns</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Opps_Created_from_Ad_Campaigns_Even_Dny</report>
                 <showPercentage>false</showPercentage>
@@ -237,7 +237,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header># Opportunities Influenced per Campaign</header>
+                <header># Influenced Opportunities per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influenced_Opps_by_Campaign_Type_YLL</report>
                 <showPercentage>false</showPercentage>
@@ -276,7 +276,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Influenced Revenue per Campaign</header>
+                <header>Influenced Pipeline per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influenced_Opps_by_Campaign_Type_YLL</report>
                 <showPercentage>false</showPercentage>
@@ -301,7 +301,7 @@
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <groupingSortProperties/>
-                <header>Won Opportunities YTD</header>
+                <header>Won Influenced Opportunities YTD</header>
                 <indicatorBreakpoint1>0.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>5.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
@@ -327,7 +327,7 @@
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <groupingSortProperties/>
-                <header>Won Revenue YTD</header>
+                <header>Won Influenced Revenue YTD</header>
                 <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
                 <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
                 <indicatorHighColor>#00716B</indicatorHighColor>
@@ -353,7 +353,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Influenced Closed/Won Revenue - First Touch Model</header>
+                <header>Closed/Won Influenced Revenue - First Touch Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_First_Touch_jsp</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -378,7 +378,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Influenced Closed/Won Revenue - Last Touch Model</header>
+                <header>Closed/Won Influenced Revenue - Last Touch Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_Last_Touch_wn0</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -403,7 +403,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Influenced Closed/Won Revenue - Even Distribution Model</header>
+                <header>Closed/Won Influenced Revenue - Even Distribution Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_Even_Distribution_lqV</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -440,7 +440,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header># Closed/Won Opportunities Influenced per Campaign</header>
+                <header># Closed/Won Influenced Opportunities per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
                 <showPercentage>false</showPercentage>
@@ -479,7 +479,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Influenced Closed/Won Revenue per Campaign</header>
+                <header>Closed/Won Influenced Revenue per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
                 <showPercentage>false</showPercentage>

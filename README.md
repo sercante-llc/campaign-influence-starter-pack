@@ -80,16 +80,17 @@ Follow this set of instructions if you want to deploy the app to a more permanen
         - Enabled **Customizable Campaign Influence** and not **Campaign Influence 1.0**
         - Enabled all additional Campaign Models
 
-1. Authorize your Sandbox or Developer org and provide it with an alias (**mysandbox** in the command below)
+1. Authorize your Org and provide it with an alias (**mysandbox** in the command below)
     ```
     sfdx force:auth:web:login -s -a mysandbox
     ```
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy --manifest manifest/package.xml
+    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
     ```
     - You may run into deployment errors with some reports referencing picklist values that do not exist. Feel free to edit the report XML file to use a picklist value that does exist in your org.
+    - You may run into deployment errors if your custom APEX tests are not passing. You can get around this by deploying to a sandbox and removing the `-l RunLocalTests` part of the command.
 
 1. In App Launcher, select Dashboards and open the **Campaign Influence** dashboard
 

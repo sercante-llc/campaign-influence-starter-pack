@@ -2,8 +2,8 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <name>Dashboard</name>
-        <members>Campaign_Influence_Dashboard</members>
-        <members>Campaign_Influence_Dashboard/JYJkKhBXsIolarecUCkmTRIEadWYEd</members>
+        <members>Campaign_Influence_Dashboards</members>
+        <members>Campaign_Influence_Dashboards/JYJkKhBXsIolarecUCkmTRIEadWYEd</members>
     </types>
     <types>
         <name>Report</name>

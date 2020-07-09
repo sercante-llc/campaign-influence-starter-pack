@@ -4,7 +4,7 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 > This sample application is designed to run on Salesforce Platform. 
 
-> This package is designed to both run independently (in a self contained scratch org) as well as be deployed to a Sandbox.
+> This package is designed to both run independently (in a self contained scratch org) as well as be directly deployed to an existing org (Sandbox or Production).
 
 
 ## Table of contents
@@ -19,12 +19,10 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 ## Installing the Starter Pack using a Scratch Org
 
-1. Set up your environment. Follow the steps in the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/) Trailhead project. The steps include:
+1. Set up your environment. The steps include:
 
-    - Enable Dev Hub in your Trailhead Playground
-    - Install Salesforce CLI
-    - Install Visual Studio Code
-    - Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension
+    - Enable Dev Hub in your org
+    - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
 
 1. If you haven't already done so, authorize your hub org and provide it with an alias (**myhuborg** in the command below):
 
@@ -32,7 +30,7 @@ This Starter Pack was developed for professionals who have already set up Connec
     sfdx force:auth:web:login -d -a myhuborg
     ```
 
-1. Clone this repository:
+1. Clone this repository, [or download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip):
 
     ```
     git clone https://github.com/sercante-llc/campaign-influence-starter-pack
@@ -65,7 +63,7 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org.
 
-1. Clone this repository:
+1. Clone this repository, [or download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip):
 
     ```
     git clone https://github.com/sercante-llc/campaign-influence-starter-pack
@@ -80,16 +78,23 @@ Follow this set of instructions if you want to deploy the app to a more permanen
         - Enabled **Customizable Campaign Influence** and not **Campaign Influence 1.0**
         - Enabled all additional Campaign Models
 
-1. Authorize your Sandbox or Developer org and provide it with an alias (**mysandbox** in the command below)
+1. Setup your environment
+    - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
+
+1. Authorize your Salesforce org and provide it with an alias (**mysandbox** in the command below)
     ```
-    sfdx force:auth:web:login -s -a mysandbox
+    # likely the command that will work for you
+    sfdx force:auth:web:login -s -a campaigninfluenceorg
+    # if you want to specify a specific login URL, use this command
+    sfdx force:auth:web:login -s -a campaigninfluenceorg -r https://mycompanyloginurl.my.salesforce.com
     ```
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy --manifest manifest/package.xml
+    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
+    # if you have APEX tests that are failing (and at least 1 that passes) run the following command (replacing the name of the test)
+    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere
     ```
-    - You may run into deployment errors with some reports referencing picklist values that do not exist. Feel free to edit the report XML file to use a picklist value that does exist in your org.
 
 1. In App Launcher, select Dashboards and open the **Campaign Influence** dashboard
 

@@ -91,9 +91,9 @@ Follow this set of instructions if you want to deploy the app to a more permanen
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
+    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests -u campaigninfluenceorg
     # if you have APEX tests that are failing (and at least 1 that passes) run the following command (replacing the name of the test)
-    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere
+    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u campaigninfluenceorg
     ```
 
 1. In App Launcher, select Dashboards and open the **Campaign Influence** dashboard

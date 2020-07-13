@@ -73,7 +73,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Closed Won (Even Distribution)</name>
+    <name>Opps Closed Won by Campaign (Even)</name>
     <params>
         <name>scopeid</name>
         <value/>

@@ -73,7 +73,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Closed Won (First Touch)</name>
+    <name>Opps Closed Won by Campaign (First)</name>
     <params>
         <name>scopeid</name>
         <value/>

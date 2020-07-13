@@ -66,7 +66,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created (First Touch)</name>
+    <name>Opps Created by Campaign (First)</name>
     <params>
         <name>scopeid</name>
         <value/>

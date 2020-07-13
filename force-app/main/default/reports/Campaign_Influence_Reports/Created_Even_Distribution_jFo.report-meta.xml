@@ -66,7 +66,7 @@
         <field>CAMPAIGN.NAME</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created (Even Distribution)</name>
+    <name>Opps Created by Campaign (Even)</name>
     <params>
         <name>scopeid</name>
         <value/>

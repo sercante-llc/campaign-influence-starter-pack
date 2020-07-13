@@ -12,7 +12,7 @@
         <chartType>Donut</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>CAMPAIGN.NAME</groupingColumn>
+        <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
         <showAxisLabels>false</showAxisLabels>
@@ -27,7 +27,7 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>CAMPAIGN.TYPE</field>
+        <field>CAMPAIGN.NAME</field>
     </columns>
     <columns>
         <field>ACCOUNT.NAME</field>
@@ -56,27 +56,27 @@
     </columns>
     <filter>
         <criteriaItems>
+            <column>OPP.STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
             <column>MODEL.NAME</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>contains</operator>
-            <value>Even</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>CAMPAIGN.TYPE</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Advertisement</value>
+            <value>Even Distribution</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>CAMPAIGN.NAME</field>
+        <field>CAMPAIGN.TYPE</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Opps Created from Ad Campaigns (Even)</name>
+    <name>Opps Closed Won by Campaign Type (Even)</name>
     <params>
         <name>scopeid</name>
         <value/>

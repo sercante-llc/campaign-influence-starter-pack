@@ -72,8 +72,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Pipeline - First Touch Model</header>
-                <report>Campaign_Influence_Reports/Created_First_Touch_P7j</report>
+                <header>All Influenced Pipeline by Campaign Type - First Touch Model</header>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_First_GEX</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -97,8 +97,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Pipeline - Last Touch Model</header>
-                <report>Campaign_Influence_Reports/Created_Last_Touch_uzV</report>
+                <header>All Influenced Pipeline by Campaign Type - Last Touch Model</header>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_Last_hRx</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -122,8 +122,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>All Influenced Pipeline - Even Distribution Model</header>
-                <report>Campaign_Influence_Reports/Created_Even_Distribution_jFo</report>
+                <header>All Influenced Pipeline by Campaign Type - Even Distribution Model</header>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_Even_35j</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -135,79 +135,76 @@
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
+            <colSpan>4</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>REVENUE_SHARE</column>
-                </chartSummary>
                 <componentType>Bar</componentType>
-                <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>CAMPAIGN.NAME</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortColumn>s!REVENUE_SHARE</sortColumn>
-                        <sortOrder>d</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>Influenced Pipeline from Conferences</header>
-                <legendPosition>Bottom</legendPosition>
-                <report>Campaign_Influence_Reports/Opps_Created_from_Conferences_Even_Z91</report>
+                <groupingSortProperties/>
+                <header>All Influenced Pipeline by Campaign - First Touch Model</header>
+                <report>Campaign_Influence_Reports/Created_First_Touch_P7j</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
-                <showValues>true</showValues>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <title>From opportunities created All Time</title>
-                <useReportChart>false</useReportChart>
+                <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>15</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>6</colSpan>
-            <columnIndex>6</columnIndex>
+            <colSpan>4</colSpan>
+            <columnIndex>4</columnIndex>
             <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
-                <chartSummary>
-                    <aggregate>Sum</aggregate>
-                    <axisBinding>y</axisBinding>
-                    <column>REVENUE_SHARE</column>
-                </chartSummary>
                 <componentType>Bar</componentType>
-                <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>CAMPAIGN.NAME</groupingColumn>
-                <groupingSortProperties>
-                    <groupingSorts>
-                        <groupingLevel>g1</groupingLevel>
-                        <sortColumn>s!REVENUE_SHARE</sortColumn>
-                        <sortOrder>d</sortOrder>
-                    </groupingSorts>
-                </groupingSortProperties>
-                <header>Influenced Pipeline from Ad Campaigns</header>
-                <legendPosition>Bottom</legendPosition>
-                <report>Campaign_Influence_Reports/Opps_Created_from_Ad_Campaigns_Even_Dny</report>
+                <groupingSortProperties/>
+                <header>All Influenced Pipeline by Campaign - Last Touch Model</header>
+                <report>Campaign_Influence_Reports/Created_Last_Touch_uzV</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
-                <showValues>true</showValues>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
                 <title>From opportunities created All Time</title>
-                <useReportChart>false</useReportChart>
+                <useReportChart>true</useReportChart>
+            </dashboardComponent>
+            <rowIndex>15</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>8</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <componentType>Bar</componentType>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingSortProperties/>
+                <header>All Influenced Pipeline by Campaign - Even Distribution Model</header>
+                <report>Campaign_Influence_Reports/Created_Even_Distribution_jFo</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>From opportunities created All Time</title>
+                <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>15</rowIndex>
             <rowSpan>9</rowSpan>
@@ -353,8 +350,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue - First Touch Model</header>
-                <report>Campaign_Influence_Reports/Closed_Won_First_Touch_jsp</report>
+                <header>Closed/Won Influenced Revenue by Campaign Type - First Touch Model</header>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_First_exL</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -378,8 +375,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue - Last Touch Model</header>
-                <report>Campaign_Influence_Reports/Closed_Won_Last_Touch_wn0</report>
+                <header>Closed/Won Influenced Revenue by Campaign Type - Last Touch Model</header>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Last_sSw</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -403,8 +400,8 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue - Even Distribution Model</header>
-                <report>Campaign_Influence_Reports/Closed_Won_Even_Distribution_lqV</report>
+                <header>Closed/Won Influenced Revenue by Campaign Type - Even Distribution Model</header>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Even_s7F</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -413,6 +410,81 @@
                 <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>39</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <componentType>Bar</componentType>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingSortProperties/>
+                <header>Closed/Won Influenced Revenue by Campaign - First Touch Model</header>
+                <report>Campaign_Influence_Reports/Closed_Won_First_Touch_jsp</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>From opportunities created All Time</title>
+                <useReportChart>true</useReportChart>
+            </dashboardComponent>
+            <rowIndex>48</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>4</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <componentType>Bar</componentType>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingSortProperties/>
+                <header>Closed/Won Influenced Revenue by Campaign - Last Touch Model</header>
+                <report>Campaign_Influence_Reports/Closed_Won_Last_Touch_wn0</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>From opportunities created All Time</title>
+                <useReportChart>true</useReportChart>
+            </dashboardComponent>
+            <rowIndex>48</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
+            <columnIndex>8</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <componentType>Bar</componentType>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingSortProperties/>
+                <header>Closed/Won Influenced Revenue by Campaign - Even Distribution Model</header>
+                <report>Campaign_Influence_Reports/Closed_Won_Even_Distribution_lqV</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <title>From opportunities created All Time</title>
+                <useReportChart>true</useReportChart>
+            </dashboardComponent>
+            <rowIndex>48</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -450,7 +522,7 @@
                 <title>From opportunities created All Time</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>48</rowIndex>
+            <rowIndex>57</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -489,7 +561,7 @@
                 <title>From opportunities created All Time</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>48</rowIndex>
+            <rowIndex>57</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>
@@ -497,7 +569,7 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>test-0yzcbnov8cz7@example.com</runningUser>
+    <runningUser>test-36hc538zdn2y@example.com</runningUser>
     <textColor>#000000</textColor>
     <title>Campaign Influence</title>
     <titleColor>#000000</titleColor>

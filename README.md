@@ -1,6 +1,6 @@
 # Campaign Influence Starter Pack
 
-This Starter Pack was developed for professionals who have already set up Connected Campaigns and Campaign Influence, and now want to understand what kind of reporting is available to them. If you need help with the setup, someone to bounce questions off of, or just a second set of eyes, you’re in luck: Sercante has helped many companies through Connected Campaigns & Campaign Influence Reporting. [Let's Chat >](https://sercante.com/contact-us/)
+This Starter Pack was developed for professionals who have already set up Connected Campaigns and Campaign Influence, and now want to understand what kind of reporting is available to them. If you need help with the setup, someone to bounce questions off of, or just a second set of eyes, you’re in luck: Sercante has helped many companies through Connected Campaigns & Campaign Influence Reporting. [Let's Chat >](https://www.sercante.com/contact-us/)
 
 > This sample application is designed to run on Salesforce Platform. 
 
@@ -80,6 +80,12 @@ Follow this set of instructions if you want to deploy the app to a more permanen
 
 1. Setup your environment
     - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
+
+1. Make sure the user you are deploying with has all the right permissions / permission sets
+    - (Permission Set) - When setting up Customizable Campaign Influence, you (your admin) created a permission set to enable the feature. The deployment user needs this
+    - (Permission) Change Dashboard Colors - This permission is needed in Lightning to deploy dasbhoards
+    - (Permission) Create and Customize Dashboards
+    - (Permission) Create and Customize Reports
 
 1. Authorize your Salesforce org and provide it with an alias (**mysandbox** in the command below)
     ```

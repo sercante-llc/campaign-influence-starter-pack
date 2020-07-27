@@ -569,7 +569,6 @@
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <runningUser>test-36hc538zdn2y@example.com</runningUser>
     <textColor>#000000</textColor>
     <title>Campaign Influence</title>
     <titleColor>#000000</titleColor>

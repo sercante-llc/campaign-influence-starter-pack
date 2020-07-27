@@ -85,7 +85,9 @@ Follow this set of instructions if you want to deploy the app to a more permanen
     - **Campaign Influence** - This was setup in a permission set when Customizable Campaign Influence was set up
     - **Change Dashboard Colors** - This permission is needed in Lightning to deploy dasbhoards
     - **Create and Customize Dashboards**
+    - **Create Dashboard Folders**
     - **Create and Customize Reports**
+    - **Create Report Folders**
 
 1. Authorize your Salesforce org and provide it with an alias (**cisporg** in the commands below)
     ```

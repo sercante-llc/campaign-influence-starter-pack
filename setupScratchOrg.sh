@@ -17,15 +17,17 @@ echo "Assigning permission set"
 sfdx force:user:permset:assign --permsetname "Campaign_Influence_Sercante_Labs"
 sfdx force:user:permset:assign --permsetname "Campaign_Influence_Demo_Data"
 
-echo "Pushing reports and dashboards, which have to be done after permset is pushed"
-git checkout force-app/main/default/dashboards
-git checkout force-app/main/default/reports
-sfdx force:source:push
-
 echo "Setting up test data"
 cd sfdx-data
 sh importData.sh
 cd ..
+
+echo "Pushing reports and dashboards, which have to be done after permset is pushed"
+git checkout force-app/main/default/dashboards
+git checkout force-app/main/default/reports
+#sfdx force:source:push
+sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
+
 #echo "Generating new password for the scratch org user"
 #sfdx force:user:password:generate
 echo "You should be ready to go!"

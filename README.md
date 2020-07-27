@@ -81,25 +81,25 @@ Follow this set of instructions if you want to deploy the app to a more permanen
 1. Setup your environment
     - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
 
-1. Make sure the user you are deploying with has all the right permissions / permission sets
-    - (Permission Set) - When setting up Customizable Campaign Influence, you (your admin) created a permission set to enable the feature. The deployment user needs this
-    - (Permission) Change Dashboard Colors - This permission is needed in Lightning to deploy dasbhoards
-    - (Permission) Create and Customize Dashboards
-    - (Permission) Create and Customize Reports
+1. Make sure the user you are deploying with has all the right permissions
+    - **Campaign Influence** - This was setup in a permission set when Customizable Campaign Influence was set up
+    - **Change Dashboard Colors** - This permission is needed in Lightning to deploy dasbhoards
+    - **Create and Customize Dashboards**
+    - **Create and Customize Reports**
 
-1. Authorize your Salesforce org and provide it with an alias (**mysandbox** in the command below)
+1. Authorize your Salesforce org and provide it with an alias (**cisporg** in the commands below)
     ```
     # likely the command that will work for you
-    sfdx force:auth:web:login -s -a campaigninfluenceorg
+    sfdx force:auth:web:login -s -a cisporg
     # if you want to specify a specific login URL, use this command
-    sfdx force:auth:web:login -s -a campaigninfluenceorg -r https://mycompanyloginurl.my.salesforce.com
+    sfdx force:auth:web:login -s -a cisporg -r https://mycompanyloginurl.my.salesforce.com
     ```
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests -u campaigninfluenceorg
+    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests -u cisporg
     # if you have APEX tests that are failing (and at least 1 that passes) run the following command (replacing the name of the test)
-    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u campaigninfluenceorg
+    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u cisporg
     ```
 
 1. In App Launcher, select Dashboards and open the **Campaign Influence** dashboard

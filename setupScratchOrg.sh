@@ -2,8 +2,9 @@
 set -e
 sfdx force:apex:execute -f sfdx-data/EnsureUserHasMarketing.apex --loglevel=FATAL
 
-echo "Installing Pardot package (pi): 'Pardot Package@4.68.0.1'"
-sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt
+echo "Installing Pardot package (pi): 'Pardot Package@4.74'"
+# get the latest package version id from the links here: https://pardot-appexchange.herokuapp.com/
+sfdx force:package:install --package 04t1W000000cRas -w 20 --noprompt
 
 echo "Doing initial push of source"
 #we can NOT push dashboards and reports in this first push

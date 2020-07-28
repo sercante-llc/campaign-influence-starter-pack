@@ -92,8 +92,8 @@ pipeline {
             steps {
                 container('sfdx') {
                     script {
-                        echo "Installing Pardot package (pi): 'Pardot Package@4.68.0.1'"
-                        sh "sfdx force:package:install --package 04t1W000000kpBDQAY -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
+                        echo "Installing Pardot package (pi): 'Pardot Package@4.74'"
+                        sh "sfdx force:package:install --package 04t1W000000cRas -w 20 --noprompt --targetusername ${SCRATCH_ORG_USERNAME}"
 
                         echo "we need to NOT push dashboards and reports in this first push"
                         sh "sfdx force:source:deploy -m Settings:Security --targetusername ${SCRATCH_ORG_USERNAME}"

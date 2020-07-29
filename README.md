@@ -93,7 +93,9 @@ Follow this set of instructions if you want to deploy the app to a more permanen
     ```
     # likely the command that will work for you
     sfdx force:auth:web:login -s -a cisporg
-    # if you want to specify a specific login URL, use this command
+    # if you are using a sandbox, use this:
+    sfdx force:auth:web:login -s -a cisporg -r https://test.salesforce.com
+    # if you want to specify a company specific login URL, use this command
     sfdx force:auth:web:login -s -a cisporg -r https://mycompanyloginurl.my.salesforce.com
     ```
 

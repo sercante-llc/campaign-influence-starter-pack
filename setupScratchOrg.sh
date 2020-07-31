@@ -36,8 +36,8 @@ cd ..
 echo "Pushing reports and dashboards, which have to be done after permset is pushed"
 git checkout force-app/main/default/dashboards
 git checkout force-app/main/default/reports
-#sfdx force:source:push
-sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
+sfdx force:source:push
+#sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
 
 #echo "Generating new password for the scratch org user"
 sfdx force:user:password:generate

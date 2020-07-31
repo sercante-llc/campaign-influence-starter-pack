@@ -3,7 +3,8 @@
     <types>
         <name>Dashboard</name>
         <members>Campaign_Influence_Dashboards</members>
-        <members>Campaign_Influence_Dashboards/JYJkKhBXsIolarecUCkmTRIEadWYEd</members>
+        <members>Campaign_Influence_Dashboards/Campaign_Influence_Dashboard_Classic</members>
+        <members>Campaign_Influence_Dashboards/Campaign_Influence_Dashboard_Lightning</members>
     </types>
     <types>
         <name>Report</name>

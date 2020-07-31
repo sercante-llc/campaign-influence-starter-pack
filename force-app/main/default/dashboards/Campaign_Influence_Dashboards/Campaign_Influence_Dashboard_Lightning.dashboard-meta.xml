@@ -350,7 +350,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign Type - First Touch Model</header>
+                <header>Won Influenced Revenue by Campaign Type - First Touch Model</header>
                 <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_First_exL</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -375,7 +375,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign Type - Last Touch Model</header>
+                <header>Won Influenced Revenue by Campaign Type - Last Touch Model</header>
                 <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Last_sSw</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -400,7 +400,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign Type - Even Distribution Model</header>
+                <header>Won Influenced Revenue by Campaign Type - Even Distribution Model</header>
                 <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Even_s7F</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -425,7 +425,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign - First Touch Model</header>
+                <header>Won Influenced Revenue by Campaign - First Touch Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_First_Touch_jsp</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -450,7 +450,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign - Last Touch Model</header>
+                <header>Won Influenced Revenue by Campaign - Last Touch Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_Last_Touch_wn0</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -475,7 +475,7 @@
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>Closed/Won Influenced Revenue by Campaign - Even Distribution Model</header>
+                <header>Won Influenced Revenue by Campaign - Even Distribution Model</header>
                 <report>Campaign_Influence_Reports/Closed_Won_Even_Distribution_lqV</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
@@ -512,7 +512,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header># Closed/Won Influenced Opportunities per Campaign</header>
+                <header># Won Influenced Opportunities per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
                 <showPercentage>false</showPercentage>
@@ -551,7 +551,7 @@
                         <sortOrder>d</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Closed/Won Influenced Revenue per Campaign</header>
+                <header>Won Influenced Revenue per Campaign</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
                 <showPercentage>false</showPercentage>
@@ -568,9 +568,11 @@
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
     <dashboardType>SpecifiedUser</dashboardType>
+    <description>Set of Campaigns with Influenced Opportunities reports displaying various information on influenced and closed won opportunities.</description>
     <isGridLayout>true</isGridLayout>
+    <!-- <runningUser>test-xfwcln0igygs@example.com</runningUser> -->
     <textColor>#000000</textColor>
-    <title>Campaign Influence</title>
+    <title>Campaign Influence Dashboard (Lightning)</title>
     <titleColor>#000000</titleColor>
     <titleSize>12</titleSize>
 </Dashboard>

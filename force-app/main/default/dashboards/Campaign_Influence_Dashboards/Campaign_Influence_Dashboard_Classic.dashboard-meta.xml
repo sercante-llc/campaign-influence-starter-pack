@@ -46,12 +46,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_First_GEX</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -73,12 +74,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Created_First_Touch_P7j</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -125,12 +127,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_First_exL</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -152,12 +155,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Closed_Won_First_Touch_jsp</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -187,11 +191,12 @@
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Influenced_Opps_by_Campaign_Type_YLL</report>
             <showPercentage>false</showPercentage>
             <showPicturesOnCharts>false</showPicturesOnCharts>
             <showValues>true</showValues>
-            <sortBy>RowLabelAscending</sortBy>
+            <sortBy>RowValueDescending</sortBy>
             <title># Influenced Opportunities</title>
             <useReportChart>false</useReportChart>
         </components>
@@ -208,12 +213,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_Last_hRx</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -235,12 +241,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Created_Last_Touch_uzV</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -267,11 +274,12 @@
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
             <showPercentage>false</showPercentage>
             <showPicturesOnCharts>false</showPicturesOnCharts>
             <showValues>true</showValues>
-            <sortBy>RowLabelAscending</sortBy>
+            <sortBy>RowValueDescending</sortBy>
             <title># Won Influenced Opportunities</title>
             <useReportChart>false</useReportChart>
         </components>
@@ -288,12 +296,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Last_sSw</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -315,12 +324,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Closed_Won_Last_Touch_wn0</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -351,11 +361,12 @@
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Influenced_Opps_by_Campaign_Type_YLL</report>
             <showPercentage>false</showPercentage>
             <showPicturesOnCharts>false</showPicturesOnCharts>
             <showValues>true</showValues>
-            <sortBy>RowLabelAscending</sortBy>
+            <sortBy>RowValueDescending</sortBy>
             <title>Influenced Pipeline</title>
             <useReportChart>false</useReportChart>
         </components>
@@ -372,12 +383,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_Type_Even_35j</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -399,12 +411,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>All Influenced Pipeline by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Created_Even_Distribution_jFo</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -432,11 +445,12 @@
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Influential_Campaigns_ClosedWon_mUk</report>
             <showPercentage>false</showPercentage>
             <showPicturesOnCharts>false</showPicturesOnCharts>
             <showValues>true</showValues>
-            <sortBy>RowLabelAscending</sortBy>
+            <sortBy>RowValueDescending</sortBy>
             <title>Won Influenced Revenue</title>
             <useReportChart>false</useReportChart>
         </components>
@@ -453,12 +467,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.TYPE</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign Type</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_Even_s7F</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -480,12 +495,13 @@
             <drillEnabled>false</drillEnabled>
             <drillToDetailEnabled>false</drillToDetailEnabled>
             <enableHover>true</enableHover>
-            <expandOthers>true</expandOthers>
+            <expandOthers>false</expandOthers>
             <footer>From opportunities created All Time</footer>
             <groupingColumn>CAMPAIGN.NAME</groupingColumn>
             <groupingSortProperties/>
             <header>Won Influenced Revenue by Campaign</header>
             <legendPosition>Bottom</legendPosition>
+            <maxValuesDisplayed>6</maxValuesDisplayed>
             <report>Campaign_Influence_Reports/Closed_Won_Even_Distribution_lqV</report>
             <showPercentage>false</showPercentage>
             <showTotal>true</showTotal>
@@ -495,7 +511,7 @@
             <useReportChart>false</useReportChart>
         </components>
     </rightSection>
-    <!-- <runningUser>test-xfwcln0igygs@example.com</runningUser> -->
+    <!-- <runningUser>test-qtfllymsmw1a@example.com</runningUser> -->
     <textColor>#000000</textColor>
     <title>Campaign Influence Dashboard (Classic)</title>
     <titleColor>#000000</titleColor>

@@ -6,6 +6,12 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 > This package is designed to both run independently (in a self contained scratch org) as well as be directly deployed to an existing org (Sandbox or Production).
 
+## What You Get
+When deploying to your org, this package simply installs:
+- 1 Report Folder
+- 14 Reports
+- 1 Dashboard Folder
+- 2 Dashboards (one for Lightning, one for Classic)
 
 ## Table of contents
 
@@ -47,27 +53,27 @@ Follow this set of instructions if you want to deploy the app to a more permanen
     - **Create and Customize Reports**
     - **Create Report Folders**
 
-1. Authorize your Salesforce org and provide it with an alias (**cisporg** in the commands below)
+1. Authorize your Salesforce org and provide it with an alias (**myorg** in the commands below)
     ```
     # likely the command that will work for you
-    sfdx force:auth:web:login -s -a cisporg
+    sfdx force:auth:web:login -s -a myorg
 
     # if you are using a sandbox, use this:
-    sfdx force:auth:web:login -s -a cisporg -r https://test.salesforce.com
+    sfdx force:auth:web:login -s -a myorg -r https://test.salesforce.com
 
     # if you want to specify a company specific login URL, use this command
-    sfdx force:auth:web:login -s -a cisporg -r https://mycompanyloginurl.my.salesforce.com
+    sfdx force:auth:web:login -s -a myorg -r https://mycompanyloginurl.my.salesforce.com
     ```
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests -u cisporg
+    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" -l RunLocalTests -u myorg
     
     # if you have APEX tests that are failing (and at least 1 that passes) run the following command (replacing the name of the test)
-    sfdx force:source:deploy --manifest manifest/package.xml --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u cisporg
+    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u myorg
     ```
 
-1. In App Launcher, select Dashboards and open the **Campaign Influence** dashboard
+1. In App Launcher, select Dashboards and open one of the **Campaign Influence** dashboards
 
 ## Installing the Starter Pack using a Scratch Org
 

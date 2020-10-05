@@ -1,14 +1,6 @@
 #!/bin/bash
 set -e
 
-#Added this as I've been burned too many times pulling reports from a scratch org, creating a new one to test them out then losing the changes
-read -p "Are you sure there are NO uncommitted changes to the Reports? Proceeding will delete the reports & dashboards folder. y/N: " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-  [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
-fi
-echo ""
-
 echo "Create scratch org with slightly different params than SFDX would"
 sfdx force:org:create --noancestors --definitionfile config/project-scratch-def.json --json --durationdays 3 --setalias cispscatchorg --setdefaultusername
 
@@ -23,8 +15,8 @@ sfdx force:package:install --package 04t1W000000cRas -w 20 --noprompt
 echo "Doing initial push of source"
 #we can NOT push dashboards and reports in this first push
 sfdx force:source:deploy -m Settings:Security #this needs to be done before the permission set is pushed
-rm -rf force-app/main/default/dashboards
-rm -rf force-app/main/default/reports
+mv force-app/main/default/dashboards ./dashboards
+mv force-app/main/default/reports ./reports
 sfdx force:source:push
 
 echo "Assigning permission set"
@@ -37,9 +29,10 @@ sh importData.sh
 cd ..
 
 echo "Pushing reports and dashboards, which have to be done after permset is pushed"
-git checkout force-app/main/default/dashboards
-git checkout force-app/main/default/reports
-sfdx force:source:push
+mv ./dashboards force-app/main/default/dashboards
+mv ./reports force-app/main/default/reports
+#sfdx force:source:push
+sfdx force:source:deploy -l RunLocalTests -p "force-app/main/default/reports,force-app/main/default/dashboards"
 #sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests
 
 #echo "Generating new password for the scratch org user"

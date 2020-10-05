@@ -2,12 +2,15 @@
 set -e
 
 #Added this as I've been burned too many times pulling reports from a scratch org, creating a new one to test them out then losing the changes
-read -p "Are you sure there are NO uncommitted changes to the Reports? Proceeding will delete the reports & dashboards folder. y/N" -n 1 -r
+read -p "Are you sure there are NO uncommitted changes to the Reports? Proceeding will delete the reports & dashboards folder. y/N: " -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
   [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
 fi
 echo ""
+
+echo "Create scratch org with slightly different params than SFDX would"
+sfdx force:org:create --noancestors --definitionfile config/project-scratch-def.json --json --durationdays 3 --setalias cispscatchorg --setdefaultusername
 
 #ok, back to our regularly scheduled programming
 sfdx force:apex:execute -f sfdx-data/EnsureUserHasMarketing.apex --loglevel=FATAL

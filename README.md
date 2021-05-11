@@ -108,11 +108,29 @@ Most of these instructions are Command Line, so you will need to launch and run 
     sfdx force:auth:web:login -d -a myhuborg
     ```
 
-1. Clone this repository, [or download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip):
+1. If you know about and use `git`, clone this repository
 
     ```
     git clone https://github.com/sercante-llc/campaign-influence-starter-pack
     cd campaign-influence-starter-pack
+    ```
+
+    **or**
+
+    1. [Download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip)
+    1. Extract the contents
+    1. Navigate to the directory (sample commands below, though it may be different for you depending where you downlaod things)
+
+    ```
+    cd Downloads/campaign-influence-starter-pack-master/campaign-influence-starter-pack-master
+    ```
+    4. Verify you are in the same directory as the sfdx-project.json file
+    ```
+    # mac or Linux
+    ls 
+
+    # windows
+    dir
     ```
 
 1. Create a scratch org and provide it with an alias (**campaigninfluence** in the command below):

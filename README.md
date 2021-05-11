@@ -27,12 +27,7 @@ When deploying to your org, this package simply installs:
 
 Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org.
 
-1. Clone this repository, [or download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip):
-
-    ```
-    git clone https://github.com/sercante-llc/campaign-influence-starter-pack
-    cd campaign-influence-starter-pack
-    ```
+Most of these instructions are Command Line, so you will need to launch and run either Terminal, Command Prompt or some similar program.
 
 1. Make sure Customizable Campaign Influence has been enabled in your org.
     - [Campaign Influence - Spring '20 Documentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/campaign_influence_implementation_guide.pdf)
@@ -42,9 +37,6 @@ Follow this set of instructions if you want to deploy the app to a more permanen
         - Enabled **Customizable Campaign Influence** and not **Campaign Influence 1.0**
         - Enabled all additional Campaign Models
 
-1. Setup your environment
-    - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
-
 1. Make sure the user you are deploying with has all the right permissions
     - **Campaign Influence** - This was setup in a permission set when Customizable Campaign Influence was set up
     - **Change Dashboard Colors** - This permission is needed in Lightning to deploy dasbhoards
@@ -52,6 +44,34 @@ Follow this set of instructions if you want to deploy the app to a more permanen
     - **Create Dashboard Folders**
     - **Create and Customize Reports**
     - **Create Report Folders**
+
+1. If you know about and use `git`, clone this repository
+
+    ```
+    git clone https://github.com/sercante-llc/campaign-influence-starter-pack
+    cd campaign-influence-starter-pack
+    ```
+
+    **or**
+
+    1. [Download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip)
+    1. Extract the contents
+    1. Navigate to the directory (sample commands below, though it may be different for you depending where you downlaod things)
+
+    ```
+    cd Downloads/campaign-influence-starter-pack-master/campaign-influence-starter-pack-master
+    ```
+    4. Verify you are in the same directory as the sfdx-project.json file
+    ```
+    # mac or Linux
+    ls 
+
+    # windows
+    dir
+    ```
+
+1. Setup your environment
+    - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
 
 1. Authorize your Salesforce org and provide it with an alias (**myorg** in the commands below)
     ```

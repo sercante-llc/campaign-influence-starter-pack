@@ -6,6 +6,8 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 > This package is designed to both run independently (in a self contained scratch org) as well as be directly deployed to an existing org (Sandbox or Production).
 
+> Users who wish to view the Dashboards and Reports will need to have the **Campaign Influence** Permission.
+
 ## What You Get
 When deploying to your org, this package simply installs:
 - 1 Report Folder
@@ -73,29 +75,43 @@ Most of these instructions are Command Line, so you will need to launch and run 
 1. Setup your environment
     - [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm)
 
-1. Authorize your Salesforce org and provide it with an alias (**myorg** in the commands below)
+1. Authorize your Salesforce org and provide it with a nickname (**myorgNickname** in the commands below)
     ```
-    # likely the command that will work for you
-    sfdx force:auth:web:login -s -a myorg
+    # Production: likely the command that will work for you
+    sfdx force:auth:web:login -s -a myorgNickname
 
-    # if you are using a sandbox, use this:
-    sfdx force:auth:web:login -s -a myorg -r https://test.salesforce.com
+    # Sandbox: if you are using a sandbox, use this:
+    sfdx force:auth:web:login -s -a myorgNickname -r https://test.salesforce.com
 
-    # if you want to specify a company specific login URL, use this command
-    sfdx force:auth:web:login -s -a myorg -r https://mycompanyloginurl.my.salesforce.com
+    # Custom Login URL: if you want to specify a company specific login URL, use this command
+    sfdx force:auth:web:login -s -a myorgNickname -r https://mycompanyloginurl.my.salesforce.com
     ```
 
 1. Run this command in a terminal to deploy the reports and dashboards
     ```
-    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" -l RunLocalTests -u myorg
-    
-    # if you have APEX tests that are failing (and at least 1 that passes) run the following command (replacing the name of the test)
-    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u myorg
+    # Production: Simple Command, hope it works!
+    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" -l RunLocalTests -u myorgNickname
+    ```
+    If you have failing APEX tests, OR if you have hundreds of tests, you can limit the scope of the testing to 1 class that passes.
+    ```
+    # Production: Command above failed due to APEX Tests
+    # (replace "NameOfAnyTestThatPassesHere" with name of a passing test class)
+    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" --testlevel RunSpecifiedTests -r NameOfAnyTestThatPassesHere -u myorgNickname
+
+    # Sandbox: In a sandbox, we don't need tests to deploy
+    sfdx force:source:deploy -p "force-app/main/default/reports,force-app/main/default/dashboards" -u myorgNickname
     ```
 
 1. In App Launcher, select Dashboards and open one of the **Campaign Influence** dashboards
 
+1. Make sure that users who will view the Dashboards/Reports all have the **Campaign Influence** Permission. This likely was set up during the Campaign Influence Implementation. If not, one option could be to:
+
+    - Create a new Permission Set (say named `Campaign Influence`), make sure the Permission Set requires a CRM or Sales User license
+    - From App Permissions, enable the Campaign Influence permission, save.
+    - Manage Assignments, add this permission set to the user(s) who will be viewing the dashboard
+
 ## Installing the Starter Pack using a Scratch Org
+This installation option is most likely to be used by developers and advanced Administrators.
 
 1. Set up your environment. The steps include:
 

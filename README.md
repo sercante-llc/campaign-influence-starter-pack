@@ -58,10 +58,10 @@ Most of these instructions are Command Line, so you will need to launch and run 
 
     1. [Download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip)
     1. Extract the contents
-    1. Navigate to the directory (sample commands below, though it may be different for you depending where you downlaod things)
+    1. Navigate to the directory (sample commands below, though it may be different for you depending where you download things)
 
     ```
-    cd Downloads/campaign-influence-starter-pack-master/campaign-influence-starter-pack-master
+    cd Downloads/campaign-influence-starter-pack-master
     ```
     4. Verify you are in the same directory as the sfdx-project.json file
     ```
@@ -135,10 +135,10 @@ This installation option is most likely to be used by developers and advanced Ad
 
     1. [Download a zip file](https://github.com/sercante-llc/campaign-influence-starter-pack/archive/master.zip)
     1. Extract the contents
-    1. Navigate to the directory (sample commands below, though it may be different for you depending where you downlaod things)
+    1. Navigate to the directory (sample commands below, though it may be different for you depending where you download things)
 
     ```
-    cd Downloads/campaign-influence-starter-pack-master/campaign-influence-starter-pack-master
+    cd Downloads/campaign-influence-starter-pack-master
     ```
     4. Verify you are in the same directory as the sfdx-project.json file
     ```

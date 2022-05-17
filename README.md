@@ -32,7 +32,7 @@ Follow this set of instructions if you want to deploy the app to a more permanen
 Most of these instructions are Command Line, so you will need to launch and run either Terminal, Command Prompt or some similar program.
 
 1. Make sure Customizable Campaign Influence has been enabled in your org.
-    - [Campaign Influence - Spring '20 Documentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/campaign_influence_implementation_guide.pdf)
+    - [Campaign Influence - Latest Documentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/campaign_influence_implementation_guide.pdf)
     - Must have:
         - Pardot Connected
         - Enabled **Connected Campaigns**
@@ -40,7 +40,7 @@ Most of these instructions are Command Line, so you will need to launch and run 
         - Enabled all additional Campaign Models
 
 1. Make sure the user you are deploying with has all the right permissions
-    - **Campaign Influence** - This was setup in a permission set when Customizable Campaign Influence was set up
+    - **Campaign Influence** - This might have been setup in a permission set when Customizable Campaign Influence was set up, though is often missed
     - **Change Dashboard Colors** - This permission is needed in Lightning to deploy dasbhoards
     - **Create and Customize Dashboards**
     - **Create Dashboard Folders**

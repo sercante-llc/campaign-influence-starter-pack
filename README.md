@@ -40,7 +40,7 @@ Most of these instructions are Command Line, so you will need to launch and run 
         - Enabled all additional Campaign Models
 
 1. Make sure the user you are deploying with has all the right permissions
-    - **Campaign Influence** - This might have been setup in a permission set when Customizable Campaign Influence was set up, though is often missed
+    - **Campaign Influence** - This might have been setup in a permission set when Customizable Campaign Influence was set up, though is often missed. It's a side note in the "Enable Customizable Campaign Influence" section in the Implementation Documentation.
     - **Change Dashboard Colors** - This permission is needed in Lightning to deploy dasbhoards
     - **Create and Customize Dashboards**
     - **Create Dashboard Folders**

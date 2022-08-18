@@ -7,10 +7,10 @@ sfdx force:org:create --noancestors --definitionfile config/project-scratch-def.
 #ok, back to our regularly scheduled programming
 sfdx force:apex:execute -f sfdx-data/EnsureUserHasMarketing.apex --loglevel=FATAL
 
-echo "Installing Pardot package (pi): 'Pardot Package@4.74'"
+echo "Installing Pardot package (pi): 'Pardot Package@4.87'"
 # get the latest package version id from the links here: https://pardot-appexchange.herokuapp.com/
 # change this in Jenkinsfile, AND the DEMO jenkins file
-sfdx force:package:install --package 04t1W000000cRas -w 20 --noprompt
+sfdx force:package:install --package 04t8Z000000tmdu -w 20 --noprompt
 
 echo "Doing initial push of source"
 #we can NOT push dashboards and reports in this first push

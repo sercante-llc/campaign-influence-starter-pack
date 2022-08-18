@@ -3,6 +3,7 @@
 # For useful gitignore templates see: https://github.com/github/gitignore
 
 # Salesforce cache
+.sf/
 .sfdx/
 
 # Logs
@@ -27,3 +28,5 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 force-app/main/default/connectedApps/Sercante_Microservices.connectedApp-meta.xml
+force-app/main/default/appMenus
+force-app/main/default/flexipages

@@ -17,6 +17,7 @@ echo "Doing initial push of source"
 sfdx force:source:deploy -m Settings:Security #this needs to be done before the permission set is pushed
 mv force-app/main/default/dashboards ./dashboards
 mv force-app/main/default/reports ./reports
+mv force-app/main/default/reportTypes ./reportTypes
 sfdx force:source:push
 
 echo "Assigning permission set"
@@ -31,6 +32,7 @@ cd ..
 echo "Pushing reports and dashboards, which have to be done after permset is pushed"
 mv ./dashboards force-app/main/default/dashboards
 mv ./reports force-app/main/default/reports
+mv ./reportTypes force-app/main/default/reportTypes
 #sfdx force:source:push
 sfdx force:source:deploy -l RunLocalTests -p "force-app/main/default/reports,force-app/main/default/dashboards"
 #sfdx force:source:deploy --manifest manifest/package.xml -l RunLocalTests

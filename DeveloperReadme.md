@@ -10,10 +10,11 @@ This Starter Pack was developed for professionals who have already set up Connec
 
 ## What You Get
 When deploying to your org, this package simply installs:
+- 1 Custom Report Type
 - 1 Report Folder
-- 14 Reports
+- 18 Reports
 - 1 Dashboard Folder
-- 2 Dashboards (one for Lightning, one for Classic)
+- 3 Dashboards (two for Lightning, one for Classic)
 
 ## Table of contents
 

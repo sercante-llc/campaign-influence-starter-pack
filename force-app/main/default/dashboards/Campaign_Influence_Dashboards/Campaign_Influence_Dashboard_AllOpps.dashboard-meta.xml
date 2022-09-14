@@ -54,7 +54,7 @@
                 <header>Opportunities Count by Influence</header>
                 <legendPosition>Right</legendPosition>
                 <maxValuesDisplayed>6</maxValuesDisplayed>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_4s3</report>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_All</report>
                 <showPercentage>true</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
@@ -96,7 +96,7 @@
                 <header>Opportunity $ by Influence</header>
                 <legendPosition>Right</legendPosition>
                 <maxValuesDisplayed>6</maxValuesDisplayed>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_4s3</report>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_All</report>
                 <showPercentage>true</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
@@ -179,7 +179,7 @@
                 <header>Opportunity Closed Won Count</header>
                 <legendPosition>Right</legendPosition>
                 <maxValuesDisplayed>6</maxValuesDisplayed>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_NfM</report>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_All</report>
                 <showPercentage>false</showPercentage>
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
@@ -261,7 +261,7 @@
                 </groupingSortProperties>
                 <header>Opps Closed Won by Campaign Type All</header>
                 <legendPosition>Bottom</legendPosition>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_NfM</report>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_All</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -302,7 +302,7 @@
                 </groupingSortProperties>
                 <header>Opps Created by Campaign All</header>
                 <legendPosition>Bottom</legendPosition>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_4s3</report>
+                <report>Campaign_Influence_Reports/Opps_Created_by_Campaign_All</report>
                 <showPercentage>false</showPercentage>
                 <showPicturesOnCharts>false</showPicturesOnCharts>
                 <showValues>false</showValues>
@@ -434,7 +434,7 @@
                 </groupingSortProperties>
                 <header>Opps Closed Won by Lead Source</header>
                 <legendPosition>Right</legendPosition>
-                <report>Campaign_Influence_Reports/Copy_of_Opps_Closed_Won_by_Campaign_All_NfM</report>
+                <report>Campaign_Influence_Reports/Opps_Closed_Won_by_Campaign_Type_All</report>
                 <showPercentage>false</showPercentage>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>

@@ -449,7 +449,7 @@
     <dashboardType>SpecifiedUser</dashboardType>
     <description>Show all opportunities to show Influence %</description>
     <isGridLayout>true</isGridLayout>
-    <runningUser>test-8uqffecqottd@example.com</runningUser>
+    <!-- <runningUser>test-8uqffecqottd@example.com</runningUser> -->
     <textColor>#000000</textColor>
     <title>Campaign Influence All Opportunities</title>
     <titleColor>#000000</titleColor>

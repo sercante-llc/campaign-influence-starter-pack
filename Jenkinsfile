@@ -99,6 +99,7 @@ pipeline {
                         sh "sfdx force:source:deploy -m Settings:Security --targetusername ${SCRATCH_ORG_USERNAME}"
                         sh "mv force-app/main/default/dashboards ./dashboards"
                         sh "mv force-app/main/default/reports ./reports"
+                        sh "mv force-app/main/default/reportTypes ./reportTypes"
 
                         echo "Doing initial push of source"
                         sh "sfdx force:source:push --targetusername ${SCRATCH_ORG_USERNAME}"
@@ -110,6 +111,7 @@ pipeline {
                         echo "Pushing reports and dashboards"
                         sh "mv ./dashboards force-app/main/default/dashboards"
                         sh "mv ./reports force-app/main/default/reports"
+                        sh "mv ./reportTypes force-app/main/default/reportTypes"
                         sh "sfdx force:source:push --targetusername ${SCRATCH_ORG_USERNAME}"
                         
                         echo "Generating new password for the scratch org user"

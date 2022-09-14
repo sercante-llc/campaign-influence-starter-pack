@@ -62,11 +62,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>extId__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>ForecastCategoryName</field>
             <table>Opportunity</table>
         </columns>
